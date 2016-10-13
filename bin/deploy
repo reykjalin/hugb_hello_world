@@ -1,0 +1,15 @@
+#!/bin/bash
+NAME=hugb_hello_world
+INSTALL=build/install/
+LIB=$INSTALL/$NAME/lib
+BIN=$INSTALL/$NAME/bin
+
+TMP=tmp
+DEPLOYED=$TMP/bin/$NAME
+
+
+[ -e $BIN/$NAME ] || { echo "Please package the jar file by running \"bash bin/package\"" && exit 1; }
+
+cp -R $LIB $TMP
+cp -R $BIN $TMP
+$DEPLOYED

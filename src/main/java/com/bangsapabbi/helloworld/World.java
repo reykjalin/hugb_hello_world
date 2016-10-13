@@ -1,10 +1,11 @@
 package com.bangsapabbi.helloworld;
 
-public class World {
+import net.joningi.icndb.ICNDBClient;
 
-    private String greeting = "Hello world!";
+public class World {
+    final ICNDBClient client = new ICNDBClient();
 
     public String greet() {
-        return greeting;
+        return client.getRandom().getJoke();
     }
 }

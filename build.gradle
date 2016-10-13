@@ -13,6 +13,12 @@ apply plugin: 'application'
 
 mainClassName = "com.bangsapabbi.helloworld.HelloWorld"
 
+jar {
+    manifest {
+        attributes("Main-Class": "com.bangsapabbi.helloworld.HelloWorld")
+    }
+}
+
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use 'jcenter' for resolving your dependencies.
@@ -24,6 +30,12 @@ repositories {
 dependencies {
     // The production code uses the SLF4J logging API at compile time
     compile 'org.slf4j:slf4j-api:1.7.5'
+
+    // Chuck Norris DB
+    compile 'net.joningi:icndb-java-api:1.0'
+
+    // Spark web
+    compile 'com.sparkjava:spark-core:2.5'
 
 
     // Declare the dependency for your favourite test framework you want to use in your tests.
